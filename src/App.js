@@ -26,6 +26,8 @@ const arr = [
 ];
 
 function App() {
+
+
   return (
     <div className="wrapper clear">
       <Drawer />
@@ -40,11 +42,9 @@ function App() {
         </div>
 
         <div className="d-flex">
-          {
-            arr.map((obj) => (
-              <Card title={obj.title} price={obj.price} url={obj.imageUrl}/>
-            ))
-          }
+          {arr.map((obj) => (
+            <Card onFavorite={() => {}} onPlus={() => {}} title={obj.title} price={obj.price} url={obj.imageUrl} />
+          ))}
         </div>
       </div>
     </div>
