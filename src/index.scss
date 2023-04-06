@@ -4,7 +4,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
   background-image: url('../public/img/background.png');
-  background-size: contain;
 }
 
 * {
@@ -41,6 +40,7 @@ header {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
 
   input {
     border: 0;
@@ -48,10 +48,16 @@ header {
     font-size: 16px;
     width: 200px;
   }
+
+  .clear {
+    position: absolute;
+    right: 0;
+    top: 7px;
+  }
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -63,7 +69,7 @@ header {
 .drawer {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   width: 420px;
   height: 100%;
   right: 0;
@@ -79,6 +85,34 @@ header {
 
   h2 {
     margin: 0;
+  }
+}
+
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
   }
 }
 
